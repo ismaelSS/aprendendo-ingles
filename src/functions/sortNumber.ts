@@ -1,5 +1,5 @@
 export interface iGetRandomNumberAndWords {
-  number: number;
+  number: string;
   words: string;
   wordsSpeak: string;
 }
@@ -95,6 +95,7 @@ function probabilityManipulator () {
 
 export function getRandomNumberAndWords(): iGetRandomNumberAndWords {
   const randomNumber = Math.floor(Math.random() * probabilityManipulator());
+  const formattedNumber = randomNumber.toLocaleString('en-US');
   const numberInWords = getNumberInWords(randomNumber);
-  return { number: randomNumber, ...numberInWords };
+  return { number: formattedNumber, ...numberInWords };
 }
