@@ -31,7 +31,7 @@ export default function CardFlip() {
 
   return (
     <div className='flex flex-col gap-6 items-center'>
-    <div className="perspective w-[90vw] h-[120vw] max-w-[500px] max-h-[660px] relative " onClick={handleFlip}>
+    <div className="perspective w-[60vh] h-[80vh] max-w-[90vw] relative " onClick={handleFlip}>
       <div className={`square-item ${isFlipped ? 'flipped' : ''}`}>
         <div className="square-side bg-blue-600 front flex items-center justify-center">
           <p className='text1'>{cardValues?.number}</p>
@@ -47,7 +47,7 @@ export default function CardFlip() {
       </div>
     </div>
 
-    <button className='text5 w-[90vw] max-w-[500px] bg-purple-600 rounded-lg h-16' onClick={resetAll}>resetar</button>
+    <button className='text5 w-[60vh] max-w-[90vw] bg-purple-600 rounded-lg h-16' onClick={resetAll}>resetar</button>
     </div>
   );
 };

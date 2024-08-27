@@ -56,8 +56,8 @@ function getNumberInWords(num: number): { words: string; wordsSpeak: string } {
 
   if (thousands > 0) {
     const thousandWords = getNumberInWords(thousands);
-    words += `${thousandWords.words} thousand `;
-    wordsSpeak += `${thousandWords.wordsSpeak} thauzãn `;
+    words += `${thousandWords.words} thousand, `;
+    wordsSpeak += `${thousandWords.wordsSpeak} thauzãn, `;
   }
 
   if (hundred > 0) {
