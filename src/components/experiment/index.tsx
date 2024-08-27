@@ -36,7 +36,7 @@ export default function CardFlip() {
         <div className="square-side bg-blue-600 front flex items-center justify-center">
           <p className='text1'>{cardValues?.number}</p>
         </div>
-        <div className="square-side bg-red-600 back flex items-center justify-between text-start flex-col gap-5 p-3 pt-16">
+        <div className="square-side bg-red-600 back flex items-center justify-between text-start flex-col gap-5 p-3 pt-12">
           <p className='text1'>{cardValues?.number}</p>
           <div className='relative bottom-16 flex flex-col gap-10'>
             <p className='text5'>{cardValues?.words}</p>
