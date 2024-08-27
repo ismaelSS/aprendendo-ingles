@@ -2,6 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@font-face {
+  font-family: vietnam-600;
+  src: url('/src/fonts/BeVietnamPro-Regular.ttf') format("opentype");
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer components {
+  .text1 {
+    @apply text-5xl font-bold text-text1;
+  }
+  .text2 {
+    @apply text-base font-semibold text-text1;
+  }
+  .text3 {
+    @apply text-base font-semibold text-text2;
+  }
+  .text4 {
+    @apply text-[1.3rem] font-normal text-text3;
+  }
+  .text5 {
+    @apply text-[1.3rem] font-normal text-text1;
+  }
+  .text5 {
+    @apply text-[1.5rem] font-semibold text-text1;
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
