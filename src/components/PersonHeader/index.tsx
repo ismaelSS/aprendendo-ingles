@@ -21,10 +21,13 @@ export default function PersonHeader() {
           <nav>
             <ul className="flex flex-col gap-5 pt-8">
               <li>
-                <Link href='/'>inicial</Link>
+                <Link href='/'>Números</Link>
               </li>
               <li>
-                <Link href='/alphabet'>letras</Link>
+                <Link href='/ordinalNumbers'>Números Ordinais</Link>
+              </li>
+              <li>
+                <Link href='/alphabet'>Letras</Link>
               </li>
             </ul>
           </nav>
