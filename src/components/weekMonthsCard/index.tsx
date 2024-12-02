@@ -2,7 +2,11 @@
 
 import sortWeekMonths, { iSortWeekMonths } from '@/functions/sortWeekMonths'
 import { useEffect, useState } from 'react'
+import { Slider } from '@/components/ui/slider'
+
 import './styles.css'
+
+type tWeekDaysSelection = 'weekDays' | 'months' | 'all'
 
 export default function WeekMonthsCard() {
   const [cardValues, setCardValues] = useState<iSortWeekMonths>({
@@ -12,9 +16,10 @@ export default function WeekMonthsCard() {
   })
   const [isFlipped, setIsFlipped] = useState(false)
   const [reset, setReset] = useState(false)
+  const [weekDaysSelection, setWeekDaysSelection] = useState<tWeekDaysSelection>('all')
 
   useEffect(() => {
-    setCardValues(sortWeekMonths({}))
+    setCardValues(sortWeekMonths({weekMonthChosen: weekDaysSelection}))
   }, [reset])
 
   const handleFlip = () => {
@@ -30,8 +35,26 @@ export default function WeekMonthsCard() {
     }
   }
 
+  const handleChange = (newValue: number[]) => {
+    if(newValue[0] === 0 ){
+      setWeekDaysSelection('weekDays'); 
+    }else if(newValue[0] === 1){
+      setWeekDaysSelection('all');
+    }else{
+      setWeekDaysSelection('months');
+    }
+    console.log("Valor escolhido:", newValue[0]);
+  };
+
   return (
     <div className="flex flex-col gap-6 items-center">
+      
+      <div className="w-[60vh] flex justify-center items-center gap-2 text-xl font-bold">
+        <span>dias</span>
+        <Slider defaultValue={[1]} max={2} step={1} className="rounded-md h-2 w-1/2" onValueChange={handleChange}/>
+        <span>messes</span>
+      </div>
+
       <div
         className="perspective w-[60vh] h-[80vh] max-w-[90vw] relative "
         onClick={handleFlip}
@@ -59,6 +82,8 @@ export default function WeekMonthsCard() {
       >
         resetar
       </button>
+
+
     </div>
   )
 }
