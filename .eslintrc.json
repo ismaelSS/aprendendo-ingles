@@ -3,7 +3,7 @@
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    "@rocketseat/eslint-config/next"
+    // "@rocketseat/eslint-config/next"
   ],
   "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
