@@ -1,13 +1,6 @@
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import Link from "next/link";
-import { TfiAlignRight } from "react-icons/tfi";
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import Link from 'next/link'
+import { TfiAlignRight } from 'react-icons/tfi'
 
 export default function PersonHeader() {
   return (
@@ -21,18 +14,21 @@ export default function PersonHeader() {
           <nav>
             <ul className="flex flex-col gap-5 pt-8">
               <li>
-                <Link href='/'>Números</Link>
+                <Link href="/">Números</Link>
               </li>
               <li>
-                <Link href='/ordinalNumbers'>Números Ordinais</Link>
+                <Link href="/ordinalNumbers">Números Ordinais</Link>
               </li>
               <li>
-                <Link href='/alphabet'>Letras</Link>
+                <Link href="/alphabet">Letras</Link>
+              </li>
+              <li>
+                <Link href="/weekMonths">dias e messes</Link>
               </li>
             </ul>
           </nav>
         </SheetContent>
       </Sheet>
     </header>
-  );
+  )
 }

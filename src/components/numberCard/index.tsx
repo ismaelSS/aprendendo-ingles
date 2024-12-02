@@ -1,17 +1,20 @@
 'use client'
 
-import React, { useEffect, useState } from 'react';
-import './styles.css';
-import { getRandomNumberAndWords, iGetRandomNumberAndWords } from '@/functions/sortNumber';
+import React, { useEffect, useState } from 'react'
+import './styles.css'
+import {
+  getRandomNumberAndWords,
+  iGetRandomNumberAndWords,
+} from '@/functions/sortNumber'
 
 export default function CardFlip() {
-  const [isFlipped, setIsFlipped] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false)
   const [reset, setReset] = useState(false)
   const [cardValues, setCardValues] = useState<iGetRandomNumberAndWords>()
 
   const handleFlip = () => {
-    setIsFlipped(!isFlipped);
-  };
+    setIsFlipped(!isFlipped)
+  }
 
   useEffect(() => {
     const cardNumber = getRandomNumberAndWords()
@@ -19,36 +22,41 @@ export default function CardFlip() {
   }, [reset])
 
   const resetAll = () => {
-
-    if(isFlipped){
+    if (isFlipped) {
       setIsFlipped(false)
       setTimeout(() => setReset(!reset), 500)
-    }else{
+    } else {
       setReset(!reset)
     }
-    
   }
 
   return (
-    <div className='flex flex-col gap-6 items-center'>
-    <div className="perspective w-[60vh] h-[80vh] max-w-[90vw] relative " onClick={handleFlip}>
-      <div className={`square-item ${isFlipped ? 'flipped' : ''}`}>
-        <div className="square-side bg-blue-600 front flex items-center justify-center">
-          <p className='text1'>{cardValues?.number}</p>
-        </div>
-        <div className="square-side bg-red-600 back flex items-center justify-between text-start flex-col gap-5 p-3 pt-12">
-          <p className='text1'>{cardValues?.number}</p>
-          <div className='relative bottom-16 flex flex-col gap-10'>
-            <p className='text5'>{cardValues?.words}</p>
-            <p className='text5'>{cardValues?.wordsSpeak}</p>
+    <div className="flex flex-col gap-6 items-center">
+      <div
+        className="perspective w-[60vh] h-[80vh] max-w-[90vw] relative "
+        onClick={handleFlip}
+      >
+        <div className={`square-item ${isFlipped ? 'flipped' : ''}`}>
+          <div className="square-side bg-blue-600 front flex items-center justify-center">
+            <p className="text1">{cardValues?.number}</p>
           </div>
-          <div/>
+          <div className="square-side bg-red-600 back flex items-center justify-between text-start flex-col gap-5 p-3 pt-12">
+            <p className="text1">{cardValues?.number}</p>
+            <div className="relative bottom-16 flex flex-col gap-10">
+              <p className="text5">{cardValues?.words}</p>
+              <p className="text5">{cardValues?.wordsSpeak}</p>
+            </div>
+            <div />
+          </div>
         </div>
       </div>
-    </div>
 
-    <button className='text5 w-[60vh] max-w-[90vw] bg-purple-600 rounded-lg h-16' onClick={resetAll}>resetar</button>
+      <button
+        className="text5 w-[60vh] max-w-[90vw] bg-purple-600 rounded-lg h-16"
+        onClick={resetAll}
+      >
+        resetar
+      </button>
     </div>
-  );
-};
-
+  )
+}

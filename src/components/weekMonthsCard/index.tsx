@@ -1,25 +1,25 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import sortWeekMonths, { iSortWeekMonths } from '@/functions/sortWeekMonths'
+import { useEffect, useState } from 'react'
 import './styles.css'
-import {
-  getRandomNumberAndWords,
-  iGetRandomNumberAndWords,
-} from '@/functions/sortNumber'
 
-export default function BaseCardFlip() {
+export default function WeekMonthsCard() {
+  const [cardValues, setCardValues] = useState<iSortWeekMonths>({
+    english: 'sunday',
+    portuguese: 'domingo',
+    portuguesePronunciation: 'san-dei',
+  })
   const [isFlipped, setIsFlipped] = useState(false)
   const [reset, setReset] = useState(false)
-  const [cardValues, setCardValues] = useState<iGetRandomNumberAndWords>()
+
+  useEffect(() => {
+    setCardValues(sortWeekMonths({}))
+  }, [reset])
 
   const handleFlip = () => {
     setIsFlipped(!isFlipped)
   }
-
-  useEffect(() => {
-    const cardNumber = getRandomNumberAndWords()
-    setCardValues(cardNumber)
-  }, [reset])
 
   const resetAll = () => {
     if (isFlipped) {
@@ -38,14 +38,15 @@ export default function BaseCardFlip() {
       >
         <div className={`square-item ${isFlipped ? 'flipped' : ''}`}>
           <div className="square-side bg-blue-600 front flex items-center justify-center">
-            <p className="text1">{cardValues?.number}</p>
+            <p className="text1 text-center">{cardValues?.english}</p>
           </div>
-
           <div className="square-side bg-red-600 back flex items-center justify-between text-start flex-col gap-5 p-3 pt-12">
-            <p className="text1">{cardValues?.number}</p>
+            <p className="text1 text-center">{cardValues?.english}</p>
             <div className="relative bottom-16 flex flex-col gap-10">
-              <p className="text5">{cardValues?.words}</p>
-              <p className="text5">{cardValues?.wordsSpeak}</p>
+              <p className="text5 text-center">{cardValues?.portuguese}</p>
+              <p className="text5 text-center">
+                {cardValues?.portuguesePronunciation}
+              </p>
             </div>
             <div />
           </div>
