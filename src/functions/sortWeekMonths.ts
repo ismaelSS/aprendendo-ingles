@@ -131,7 +131,7 @@ export default function sortWeekMonths({
   let chosenElements = weekDays
 
   if (weekMonthChosen === 'months') {
-    chosenElements = weekDays
+    chosenElements = months
   } else if (weekMonthChosen === 'all') {
     chosenElements = weekDays.concat(months)
   }
