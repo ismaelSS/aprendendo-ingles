@@ -1,7 +1,5 @@
-import OrdinalNumberCard from "@/components/ordinalNumbersCard";
+import OrdinalNumberCard from '@/components/ordinalNumbersCard'
 
 export default function OrdinalNumberPage() {
-  return(
-    <OrdinalNumberCard/>
-  )
+  return <OrdinalNumberCard />
 }

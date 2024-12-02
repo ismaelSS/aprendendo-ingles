@@ -1,34 +1,34 @@
-"use client";
+'use client'
 
-import React, { useEffect, useState } from "react";
-import "./styles.css";
+import React, { useEffect, useState } from 'react'
+import './styles.css'
 import {
   getRandomNumberAndWords,
   iGetRandomNumberAndWords,
-} from "@/functions/sortNumber";
+} from '@/functions/sortNumber'
 
 export default function BaseCardFlip() {
-  const [isFlipped, setIsFlipped] = useState(false);
-  const [reset, setReset] = useState(false);
-  const [cardValues, setCardValues] = useState<iGetRandomNumberAndWords>();
+  const [isFlipped, setIsFlipped] = useState(false)
+  const [reset, setReset] = useState(false)
+  const [cardValues, setCardValues] = useState<iGetRandomNumberAndWords>()
 
   const handleFlip = () => {
-    setIsFlipped(!isFlipped);
-  };
+    setIsFlipped(!isFlipped)
+  }
 
   useEffect(() => {
-    const cardNumber = getRandomNumberAndWords();
-    setCardValues(cardNumber);
-  }, [reset]);
+    const cardNumber = getRandomNumberAndWords()
+    setCardValues(cardNumber)
+  }, [reset])
 
   const resetAll = () => {
     if (isFlipped) {
-      setIsFlipped(false);
-      setTimeout(() => setReset(!reset), 500);
+      setIsFlipped(false)
+      setTimeout(() => setReset(!reset), 500)
     } else {
-      setReset(!reset);
+      setReset(!reset)
     }
-  };
+  }
 
   return (
     <div className="flex flex-col gap-6 items-center">
@@ -36,7 +36,7 @@ export default function BaseCardFlip() {
         className="perspective w-[60vh] h-[80vh] max-w-[90vw] relative "
         onClick={handleFlip}
       >
-        <div className={`square-item ${isFlipped ? "flipped" : ""}`}>
+        <div className={`square-item ${isFlipped ? 'flipped' : ''}`}>
           <div className="square-side bg-blue-600 front flex items-center justify-center">
             <p className="text1">{cardValues?.number}</p>
           </div>
@@ -59,5 +59,5 @@ export default function BaseCardFlip() {
         resetar
       </button>
     </div>
-  );
+  )
 }

@@ -1,7 +1,5 @@
-import LettersCard from "@/components/lettersCard";
+import LettersCard from '@/components/lettersCard'
 
 export default function AlphabetPage() {
-  return(
-    <LettersCard/>
-  )
+  return <LettersCard />
 }
