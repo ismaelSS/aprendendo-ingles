@@ -48,10 +48,10 @@ export default function WeekMonthsCard() {
   return (
     <div className="flex flex-col gap-6 items-center">
       
-      <div className="w-[60vh] flex justify-between gap-3 items-center text-xl font-bold">
-        <span className='w-[8rem] text-center'>dias</span>
-        <Slider defaultValue={[1]} max={2} step={1} className="rounded-md h-2 flex" onValueChange={handleChange}/>
-        <span className='w-[8rem] text-center'>messes</span>
+      <div className="w-[60vh] max-w-[90vw] flex justify-between gap-3 items-center text-xl font-bold">
+        <span>dias</span>
+        <Slider defaultValue={[1]} max={2} step={1} className="rounded-md h-2 w-1/2" onValueChange={handleChange}/>
+        <span>messes</span>
       </div>
 
       <div
