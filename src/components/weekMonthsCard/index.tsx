@@ -19,13 +19,11 @@ export default function WeekMonthsCard() {
   const [weekDaysSelection, setWeekDaysSelection] = useState<tWeekDaysSelection>('all')
 
   useEffect(() => {
-   
     setCardValues(sortWeekMonths({weekMonthChosen: weekDaysSelection}))
   }, [reset])
 
   const handleFlip = () => {
     setIsFlipped(!isFlipped)
-    resetAll()
   }
 
   const resetAll = () => {
