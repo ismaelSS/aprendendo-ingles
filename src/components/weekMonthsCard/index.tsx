@@ -49,7 +49,7 @@ export default function WeekMonthsCard() {
     <div className="flex flex-col gap-6 items-center">
       
       <div className="w-[60vh] max-w-[90vw] flex justify-between gap-3 items-center text-xl font-bold">
-        <span>dias</span>
+        <span>semana</span>
         <Slider defaultValue={[1]} max={2} step={1} className="rounded-md h-2 w-1/2" onValueChange={handleChange}/>
         <span>messes</span>
       </div>
