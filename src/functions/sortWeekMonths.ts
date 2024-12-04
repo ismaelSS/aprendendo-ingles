@@ -108,7 +108,7 @@ export default function sortWeekMonths({
       portuguesePronunciation: 'julai',
     },
     {
-      english: 'agust',
+      english: 'august',
       portuguese: 'agosto',
       portuguesePronunciation: 'aagust (a com som de R em inglês)',
     },
